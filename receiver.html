@@ -33,13 +33,11 @@ limitations under the License.
     <title>Cast Hello Text</title>
   </head>
   <body>
-  <iframe id="message" src="http://slowbro.org" ></iframe>
+  <iframe id="message" src="http://slowbro.org" style="z-index='0'" onload="changeZ('message', 'message_load')"></iframe>
 
-  <iframe id="message_load" src="http://slowbro.org" ></iframe>
+  <iframe id="message_load" src="http://slowbro.org" style="z-index='-1'" onload="changeZ('message_load','message')"></iframe>
     <script type="text/javascript" src="//www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js"></script>
     <script type="text/javascript">
-      var front = document.getElementById('message');
-      var back = document.getElementById('message_load')
       window.onload = function() {
         cast.receiver.logger.setLevelValue(0);
         window.castReceiverManager = cast.receiver.CastReceiverManager.getInstance();
@@ -86,17 +84,13 @@ limitations under the License.
       // utility function to display the text message in the input field
       function displayText(text) {
         console.log(text);
-        back.src = text;
+        document.getElementById('message').src = text;
         window.castReceiverManager.setApplicationState(text);
       };
 
-      back.onload = function() {
-        var aux = back;
-        back = front;
-        front = aux;
-
-        front.style.zIndex="1"
-        back.style.zIndex="0"
+      function changeZ(ref1, ref2) {
+        document.getElementById(ref1).style.zIndex="-1";
+        document.getElementById(ref2).style.zIndex="0";
       }
     </script>
   </body>
