@@ -22,7 +22,8 @@
     console.log($('#in1').value());
   });
    function changesource(idif, idin) {
-    $(idif).attr('src',$(idin).val());
+   // $(idif).attr('src',$(idin).val());
+     $('#div1').load($(idin).val());
     console.log($(idin).val());
    }
   </script>
@@ -31,7 +32,7 @@
 
 <div class="ui-widget-content resizable draggable">
   <input id="in1" type="text"></input><button onclick="changesource('#if1','#in1')">Change</button></br>
-  <div class="resizable ui-widget-content">
+  <div id="div1" class="resizable ui-widget-content">
     <iframe id="if1" class="resizable ui-widget-content" style="width: 100%; height: 100%; border: none; margin: 0; padding: 0; display: block;" src=""></iframe>
   </div>
 </div>
