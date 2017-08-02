@@ -33,7 +33,7 @@ limitations under the License.
     <title>Cast Hello Text</title>
   </head>
   <body>
-  <iframe id="message" src="https://docs.google.com/presentation/d/1CYgj8bvaCJud1y2KTKB2BBGF70WpuBs34q7c_69zRYg/pub?start=true&loop=true&delayms=5000"></iframe>
+  <iframe id="message" src=""></iframe>
 
   <!-- <iframe id="message_load" src="" style="z-index='1'" onload="JavaScript:changeZ('message_load','message')"></iframe>-->
     <script type="text/javascript" src="//www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js"></script>
@@ -85,7 +85,7 @@ limitations under the License.
       // utility function to display the text message in the input field
       function changeURL(text) {
         console.log(text);
-       // document.getElementById('message').src = text;
+        document.getElementById('message').src = text;
         window.castReceiverManager.setApplicationState(text);
       };
     </script>
