@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="https://v40.pingendo.com/assets/4.0.0/default/theme.css" type="text/css"> </head>
+  <link rel="stylesheet" href="css/theme.css" type="text/css"> </head>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin=""/>
   <link rel="stylesheet" href="css/dc.css"/>
   <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
@@ -18,7 +18,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse text-center justify-content-center" id="navbar3SupportedContent">
-        <span class="navbar-text text-light" >Entenda os acidentes nas vias do recife</span>
+        <h3 class="navbar-text text-light" >Visualize os acidentes e fluxo das vias</h3>
       </div>
     </div>
   </nav>
@@ -29,15 +29,19 @@
           <div id="mapid" style="width: 600px; height: 400px;"></div>
         </div>
         <div class="col-md-5 align-self-center">
-          <a class="reset" href="javascript:pie.filterAll();dc.redrawAll();">reset</a>    
+          <h5 class="text-primary pt-3" >Tipos de acidentes</h5>
+          <a class="reset pull-right" href="javascript:pie.filterAll();dc.redrawAll();">reset</a>    
           <div id="top4" style="width: 360px; height: 260px;"></div> </div>
       </div>
       <div class="row">
-        <div class="col-md-7">   
-          <a class="reset" href="javascript:heatMap.filterAll();dc.redrawAll();">reset</a>        
+        <div class="col-md-6">
+          <h5 class="text-primary pt-3" >Acidentes por dia da semana e hora do dia</h5>
+          <a class="reset pull-right" href="javascript:heatMap.filterAll();dc.redrawAll();">reset</a>        
           <div id="test"></div> </div>
-        <div class="col-md-5">
-          <div id="chartl"></div>
+        <div class="col-md-6">
+          <h5 class="text-primary pt-3" >Fluxo de veículos por dia da semana e hora do dia</h5>
+          <a class="reset pull-right" href="javascript:fluxoRua.filterAll();fluxoHM.calculateColorDomain();dc.redrawAll();">reset</a>
+          <div id="fluxo"></div>
         </div>
       </div>
     </div>
